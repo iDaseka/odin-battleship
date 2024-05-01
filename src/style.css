@@ -1,0 +1,177 @@
+:root {
+    --system-ui: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --hit: #cb1616;
+    --missed: #545454;
+    --gap: 1vh;
+    --regular-font-size: clamp(0.4rem, 0.5rem + 1vw, 1.1rem);
+    --larger-font-size: clamp(0.6rem, 0.5rem + 2vw, 1.5rem);
+    color: #ffffff;
+    background-color:#0e0e0e;
+    --primary-color: #dddddd;
+    --secondary-color: #979797;
+    --accent-color: #b7b7b7;
+    --button-padding: clamp(0.3rem, 0.1rem + 2vw, 1rem);
+  }
+  
+  .element {
+    font-family: var(--system-ui);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--system-ui);
+  }
+  
+  header {
+    padding: 1rem clamp(1rem, -0.25rem + 5vw, 2rem);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: var(--larger-font-size);
+    --gap: clamp(0.2rem, 0.2rem + 2vw, 1rem);
+    gap: var(--gap);
+    color: var(--accent-color);
+  }
+  
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+  }
+  
+  .message-display {
+    font-size: var(--regular-font-size);
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.8;
+  }
+  
+  .intro-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+    margin: clamp(0.5rem, 0.2rem + 3vw, 2rem);
+    font-size: var(--regular-font-size);
+    font-weight: 700;
+  }
+  
+  .name-input {
+    border: transparent;
+    background-color: #e8e8e8;
+    border-radius: 5px;
+    font-size: var(--regular-font-size);
+    padding: clamp(0.2rem, 0.5rem + 1vw, 1rem);
+    font-weight: 700;
+  }
+  
+  .name-input:focus {
+    outline: none;
+  }
+  
+  .player,
+  .computer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap);
+  }
+  
+  .game-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: var(--gap);
+    font-size: var(--larger-font-size);
+    font-weight: 700;
+  }
+  
+  .gameboard-container {
+    width: 100%;
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+  }
+  
+  .button-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
+    margin: clamp(1rem, 0.2rem + 3vw, 3rem);
+  }
+  
+  .board-cell {
+    border: 1px solid var(--primary-color);
+    background-color: var(--secondary-color);
+    width: clamp(0.8rem, 0.2rem + 2.2vw, 2.5rem);
+    height: clamp(0.8rem, 0.2rem + 2.2vw, 2.5rem);
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  .board-cell:hover {
+    background-color: #fff;
+  }
+  
+  button {
+    background: var(--accent-color);
+    padding: var(--button-padding);
+    border: none;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-size: var(--regular-font-size);
+    font-weight: 700;
+  }
+  
+  button:hover {
+    opacity: 0.9;
+    cursor: pointer;
+  }
+  
+  .ship.draggable {
+    background: var(--accent-color);
+    border-radius: 5px;
+    margin-left: -1px;
+    position: absolute;
+    z-index: 2;
+  }
+  
+  .hit {
+    background-color: var(--hit);
+  }
+  
+  .missed {
+    background-color: var(--missed);
+  }
+  
+  .draggable {
+    cursor: move;
+  }
+  
+  .draggable:hover {
+    opacity: 0.8;
+  }
+  
+  .dragging {
+    z-index: 0;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .inactive {
+    opacity: 0.8;
+    .draggable {
+      opacity: 0.6;
+    }
+  }
+  
